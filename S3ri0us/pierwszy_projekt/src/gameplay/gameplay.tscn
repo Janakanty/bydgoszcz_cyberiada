@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0mf00g66sk4b"]
+
+[ext_resource type="PackedScene" uid="uid://b6qy75bv6froa" path="res://src/player/player.tscn" id="1_htdvk"]
+[ext_resource type="Script" path="res://src/gameplay/gameplay.gd" id="1_ok4ot"]
+[ext_resource type="PackedScene" uid="uid://m475ywugbswe" path="res://src/UI/ui.tscn" id="2_6fxhq"]
+[ext_resource type="PackedScene" uid="uid://dximm3hww83ho" path="res://src/levels/level.tscn" id="2_16qan"]
+
+[node name="Gameplay" type="Node2D"]
+script = ExtResource("1_ok4ot")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="UI" instance=ExtResource("2_6fxhq")]
+
+[node name="Player" parent="." instance=ExtResource("1_htdvk")]
+position = Vector2(164, 54)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-2, 6)
+position_smoothing_enabled = true
+
+[node name="Level" parent="." instance=ExtResource("2_16qan")]
