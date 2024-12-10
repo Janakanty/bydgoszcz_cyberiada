@@ -1,0 +1,111 @@
+[gd_scene load_steps=14 format=3 uid="uid://bjgtg6iip2nl"]
+
+[ext_resource type="Texture2D" uid="uid://dwmi1vwvdvonj" path="res://assets/graphics/player/character_male_adventurer_sheet.png" id="1_3opdh"]
+[ext_resource type="Script" path="res://src/player/player.gd" id="1_7b0cq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wspmg"]
+atlas = ExtResource("1_3opdh")
+region = Rect2(0, 0, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvhuu"]
+atlas = ExtResource("1_3opdh")
+region = Rect2(96, 0, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ql3oo"]
+atlas = ExtResource("1_3opdh")
+region = Rect2(384, 0, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8stk"]
+atlas = ExtResource("1_3opdh")
+region = Rect2(480, 256, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmhit"]
+atlas = ExtResource("1_3opdh")
+region = Rect2(384, 384, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agyto"]
+atlas = ExtResource("1_3opdh")
+region = Rect2(768, 512, 96, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rm4cg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wspmg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvhuu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ql3oo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8stk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmhit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agyto")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o7kya"]
+radius = 20.0
+height = 72.0
+
+[sub_resource type="Animation" id="Animation_xauuf"]
+resource_name = "jump"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_x5d4t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1ju2x"]
+_data = {
+"RESET": SubResource("Animation_x5d4t"),
+"jump": SubResource("Animation_xauuf")
+}
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_7b0cq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rm4cg")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 28)
+shape = SubResource("CapsuleShape2D_o7kya")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1ju2x")
+}
