@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://b81cch3to7dk3"]
+
+[ext_resource type="PackedScene" uid="uid://c1em4lkcrscae" path="res://src/level/platforms/platform.tscn" id="1_kktkf"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Platform" parent="Platforms" instance=ExtResource("1_kktkf")]
+position = Vector2(285, 599)
+
+[node name="Platform2" parent="Platforms" instance=ExtResource("1_kktkf")]
+position = Vector2(658, 343)
+
+[node name="Platform5" parent="Platforms" instance=ExtResource("1_kktkf")]
+position = Vector2(146, -552)
+
+[node name="Platform3" parent="Platforms" instance=ExtResource("1_kktkf")]
+position = Vector2(114, 67)
+
+[node name="Platform4" parent="Platforms" instance=ExtResource("1_kktkf")]
+position = Vector2(591, -139)
