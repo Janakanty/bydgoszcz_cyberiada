@@ -13,7 +13,8 @@ script = ExtResource("1_krpm5")
 position = Vector2(0, -1)
 
 [node name="level1" parent="." instance=ExtResource("2_wej6a")]
-position = Vector2(-506, -140)
+position = Vector2(-1856, -805)
+scale = Vector2(2.07703, 1.33553)
 
 [node name="UI" type="CanvasLayer" parent="."]
 

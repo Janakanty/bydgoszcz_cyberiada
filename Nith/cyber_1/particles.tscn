@@ -1,19 +1,25 @@
 [gd_scene load_steps=3 format=3 uid="uid://6wqr5v087r8y"]
 
-[ext_resource type="Texture2D" uid="uid://boo3ifjt4qmjs" path="res://assets/Particles/star_04.png" id="1_87faf"]
+[ext_resource type="Texture2D" uid="uid://c2sdnwvxoduyn" path="res://assets/Particles/spark_05.png" id="1_uykpp"]
 
 [sub_resource type="Gradient" id="Gradient_j032h"]
 offsets = PackedFloat32Array(0.0089286, 0.5, 1)
-colors = PackedColorArray(0.53592, 0.63, 0.2268, 1, 0.890712, 0.340507, 0.750687, 1, 1, 1, 1, 1)
+colors = PackedColorArray(1, 1, 0, 1, 0.890712, 0.340507, 0.750687, 1, 1, 1, 1, 1)
 metadata/_snap_enabled = true
 
 [node name="gwiazdki" type="CPUParticles2D"]
 amount = 4
-randomness = 1.0
-lifetime_randomness = 0.08
-texture = ExtResource("1_87faf")
-spread = 81.49
-gravity = Vector2(0, 98)
+randomness = 0.4
+texture = ExtResource("1_uykpp")
+direction = Vector2(0, 4)
+spread = 180.0
+gravity = Vector2(0, 50)
+initial_velocity_min = 50.0
+initial_velocity_max = 231.32
+angular_velocity_min = -272.43
+angular_velocity_max = 330.81
+angle_min = -253.0
+angle_max = 155.7
 scale_amount_min = 0.2
 scale_amount_max = 0.2
 color_ramp = SubResource("Gradient_j032h")
