@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cxade8h82b6n6"]
+[gd_scene load_steps=3 format=3 uid="uid://cxade8h82b6n6"]
 
 [ext_resource type="Script" path="res://scr/UI/ui.gd" id="1_vh2km"]
+[ext_resource type="FontFile" uid="uid://xarp8jr4yxd8" path="res://assets/fonts/Lato-Bold.ttf" id="2_lfoig"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -15,7 +16,30 @@ script = ExtResource("1_vh2km")
 layout_mode = 0
 anchor_right = 0.332465
 anchor_bottom = 0.123457
+theme_override_colors/font_color = Color(1, 1, 1, 0.607843)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.501961)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/font = ExtResource("2_lfoig")
+theme_override_font_sizes/font_size = 98
 text = "0000"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="GameOverMessage" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.503
+anchor_top = 0.239
+anchor_right = 0.503
+anchor_bottom = 0.239
+offset_left = -196.456
+offset_top = -35.872
+offset_right = 196.544
+offset_bottom = 36.128
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1

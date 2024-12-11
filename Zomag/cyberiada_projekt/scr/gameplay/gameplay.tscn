@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bf4ionkcjm0yh"]
+[gd_scene load_steps=6 format=3 uid="uid://bf4ionkcjm0yh"]
 
 [ext_resource type="PackedScene" uid="uid://bme4md6fx8fmi" path="res://scr/player/player.tscn" id="1_f8b13"]
 [ext_resource type="Script" path="res://scr/gameplay/gameplay.gd" id="1_nnkyk"]
 [ext_resource type="PackedScene" uid="uid://dhkexm8xqscwp" path="res://scr/levels/level.tscn" id="2_0h0yr"]
 [ext_resource type="PackedScene" uid="uid://cxade8h82b6n6" path="res://scr/UI/ui.tscn" id="2_jyqly"]
+[ext_resource type="PackedScene" uid="uid://4aasp73jos1b" path="res://scr/player/player_camera.tscn" id="4_1eeax"]
 
 [node name="Gameplay" type="Node2D"]
 script = ExtResource("1_nnkyk")
@@ -13,8 +14,10 @@ script = ExtResource("1_nnkyk")
 [node name="UI" parent="UI" instance=ExtResource("2_jyqly")]
 
 [node name="Player" parent="." instance=ExtResource("1_f8b13")]
+position = Vector2(186, 485)
 scale = Vector2(0.67, 0.67)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" parent="." instance=ExtResource("4_1eeax")]
+position = Vector2(572, 329)
 
 [node name="Level" parent="." instance=ExtResource("2_0h0yr")]
