@@ -14,10 +14,10 @@ script = ExtResource("1_nnkyk")
 [node name="UI" parent="UI" instance=ExtResource("2_jyqly")]
 
 [node name="Player" parent="." instance=ExtResource("1_f8b13")]
-position = Vector2(120, 438)
+position = Vector2(186, 485)
 scale = Vector2(0.67, 0.67)
 
 [node name="Camera2D" parent="." instance=ExtResource("4_1eeax")]
-position = Vector2(436, 484)
+position = Vector2(572, 329)
 
 [node name="Level" parent="." instance=ExtResource("2_0h0yr")]

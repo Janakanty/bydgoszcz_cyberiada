@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scr/player/player_camera.gd" id="1_sxp02"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ssk5t"]
-size = Vector2(1811.94, 81.9776)
+size = Vector2(3417.91, 81.9776)
 
 [node name="Camera2D" type="Camera2D"]
 scale = Vector2(0.67, 0.67)

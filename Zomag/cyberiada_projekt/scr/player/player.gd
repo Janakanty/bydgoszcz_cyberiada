@@ -2,7 +2,9 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -1000.0
+var JUMP_VELOCITY = -1000.0
+var gravity_alt = Vector2(0,980)
+
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var jump: AudioStreamPlayer = $Jump
 
@@ -15,7 +17,7 @@ func _physics_process(delta: float) -> void:
 func gravity(delta: float):
 		# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity += gravity_alt * delta
 		
 func jumping():
 	# Handle jump.
@@ -34,3 +36,21 @@ func moving():
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	
+func wall_detector():
+	if is_on_wall():
+		print("Tykam ścianę.")
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("wall"):
+		JUMP_VELOCITY = -2000
+		gravity_alt = Vector2(0, 600)
+		$Timer.stop()
+		$Timer.start()
+		
+
+
+func _on_timer_timeout() -> void:
+	JUMP_VELOCITY = -1000
+	gravity_alt = Vector2(0, 980)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bme4md6fx8fmi"]
+[gd_scene load_steps=20 format=3 uid="uid://bme4md6fx8fmi"]
 
 [ext_resource type="Script" path="res://scr/player/player.gd" id="1_efg6e"]
 [ext_resource type="PackedScene" uid="uid://dojdn5i5uogsb" path="res://scr/particles/stars.tscn" id="2_2jowp"]
@@ -117,6 +117,10 @@ _data = {
 "jump": SubResource("Animation_tcfai")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wem8d"]
+radius = 53.0
+height = 220.0
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_efg6e")
 
@@ -138,3 +142,14 @@ libraries = {
 [node name="Jump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_41jr8")
 bus = &"SFX"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 29)
+shape = SubResource("CapsuleShape2D_wem8d")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
