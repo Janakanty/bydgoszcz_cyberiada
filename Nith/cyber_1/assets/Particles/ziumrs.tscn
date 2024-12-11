@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dq7ssyfq4jxws"]
+
+[ext_resource type="Texture2D" uid="uid://bqftm4400p66p" path="res://assets/Particles/slash_03.png" id="1_hp0k3"]
+
+[node name="Node2D" type="CPUParticles2D"]
+amount = 2
+texture = ExtResource("1_hp0k3")
+gravity = Vector2(30, 9)
+initial_velocity_max = 600.0

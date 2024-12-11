@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://vwhj2pq24m7n"]
+
+[ext_resource type="PackedScene" uid="uid://ddt8syamet6jn" path="res://src/levels/platforms/platform1.tscn" id="1_s2div"]
+[ext_resource type="PackedScene" uid="uid://d0g8yohflj63e" path="res://assets/block/block.tscn" id="1_xydor"]
+
+[node name="level1" type="Node2D"]
+
+[node name="platform" parent="." instance=ExtResource("1_s2div")]
+position = Vector2(573, 689)
+
+[node name="platform2" parent="." instance=ExtResource("1_s2div")]
+position = Vector2(858, 579)
+
+[node name="platform3" parent="." instance=ExtResource("1_s2div")]
+position = Vector2(375, 478)
+
+[node name="Block" parent="." instance=ExtResource("1_xydor")]
+position = Vector2(506, 378)

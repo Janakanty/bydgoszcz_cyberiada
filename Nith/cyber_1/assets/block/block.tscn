@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0g8yohflj63e"]
+
+[ext_resource type="PackedScene" uid="uid://dnjgfqbd54dx2" path="res://src/levels/walls/wall.tscn" id="1_mo1mf"]
+
+[node name="Block" type="Node2D"]
+
+[node name="wall2" parent="." instance=ExtResource("1_mo1mf")]
+position = Vector2(491, 51)
+
+[node name="wall" parent="." instance=ExtResource("1_mo1mf")]
+position = Vector2(43, 58)
