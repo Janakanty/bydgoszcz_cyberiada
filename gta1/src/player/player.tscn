@@ -1,0 +1,111 @@
+[gd_scene load_steps=14 format=3 uid="uid://g1l3weelicqk"]
+
+[ext_resource type="Script" path="res://src/player/player.gd" id="1_to231"]
+[ext_resource type="Texture2D" uid="uid://b3uoqjkwpkvgh" path="res://assets/graphics/player/Robot/Tilesheet/character_robot_sheet.png" id="2_sedyj"]
+[ext_resource type="PackedScene" uid="uid://cwsquwkykp0w5" path="res://src/CPU/cpu_particles_2d.tscn" id="3_tnhny"]
+[ext_resource type="AudioStream" uid="uid://c7li0sgdx5ikx" path="res://assets/sounds/386621__jalastram__sfx_jump_44.wav" id="4_7hudi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bsi8"]
+atlas = ExtResource("2_sedyj")
+region = Rect2(0, 0, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pl0g"]
+atlas = ExtResource("2_sedyj")
+region = Rect2(192, 0, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkgqp"]
+atlas = ExtResource("2_sedyj")
+region = Rect2(384, 0, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qcle4"]
+atlas = ExtResource("2_sedyj")
+region = Rect2(672, 0, 96, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lcxa1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5bsi8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pl0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nkgqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qcle4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_08oho"]
+resource_name = "jump"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_mwdt1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jyixa"]
+_data = {
+"RESET": SubResource("Animation_mwdt1"),
+"jump": SubResource("Animation_08oho")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8hlxf"]
+radius = 35.0
+height = 86.0
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+position = Vector2(1, -22)
+script = ExtResource("1_to231")
+
+[node name="CPUParticles2D" parent="." instance=ExtResource("3_tnhny")]
+position = Vector2(9, 37)
+rotation = 3.14159
+scale = Vector2(72.6623, -82.864)
+amount = 30
+speed_scale = 2.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["player"]]
+sprite_frames = SubResource("SpriteFrames_lcxa1")
+autoplay = "default"
+frame_progress = 0.604218
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jyixa")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player"]]
+position = Vector2(1, 25)
+shape = SubResource("CapsuleShape2D_8hlxf")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_7hudi")
