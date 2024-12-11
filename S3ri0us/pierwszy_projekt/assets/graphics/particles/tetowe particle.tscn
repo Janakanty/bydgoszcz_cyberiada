@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://duunr46aqsljo"]
+
+[ext_resource type="Texture2D" uid="uid://b8uvai8tqk4pg" path="res://assets/graphics/particles/star_09.png" id="1_dkf82"]
+[ext_resource type="Texture2D" uid="uid://c7j0k743qi2k7" path="res://assets/graphics/particles/symbol_01.png" id="2_cladk"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 3
+lifetime = 1.5
+one_shot = true
+randomness = 0.5
+texture = ExtResource("1_dkf82")
+gravity = Vector2(0, 500)
+linear_accel_min = -1.0
+linear_accel_max = 20.0
+color = Color(0.205774, 0.217813, 0.786994, 1)
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+position = Vector2(740, -1)
+explosiveness = 1.0
+texture = ExtResource("2_cladk")
+emission_shape = 1
+emission_sphere_radius = 50.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 25.0
+initial_velocity_max = 25.0
+scale_amount_min = 0.2
+scale_amount_max = 0.5
+color = Color(0.816625, 0.000157484, 0.703795, 1)

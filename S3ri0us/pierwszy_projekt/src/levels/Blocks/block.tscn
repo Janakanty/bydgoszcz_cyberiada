@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://b06la3wxds2cd"]
+
+[ext_resource type="PackedScene" uid="uid://bheqeh1jb7gbh" path="res://src/levels/Walls/wall.tscn" id="1_s0c5o"]
+[ext_resource type="PackedScene" uid="uid://csvskn6gqc8on" path="res://src/levels/platforms/platform.tscn" id="2_p2v7r"]
+
+[node name="Block" type="Node2D"]
+
+[node name="Wall" parent="." instance=ExtResource("1_s0c5o")]
+position = Vector2(-4, 0)
+
+[node name="Wall2" parent="." instance=ExtResource("1_s0c5o")]
+position = Vector2(1164, -5)
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="StaticBody2D" parent="Platforms" instance=ExtResource("2_p2v7r")]
+position = Vector2(96, 62)
+
+[node name="StaticBody2D2" parent="Platforms" instance=ExtResource("2_p2v7r")]
+position = Vector2(85, 1031)
+
+[node name="StaticBody2D3" parent="Platforms" instance=ExtResource("2_p2v7r")]
+position = Vector2(676, 235)
+
+[node name="StaticBody2D4" parent="Platforms" instance=ExtResource("2_p2v7r")]
+position = Vector2(182, 808)
+
+[node name="StaticBody2D5" parent="Platforms" instance=ExtResource("2_p2v7r")]
+position = Vector2(628, 617)
+
+[node name="StaticBody2D6" parent="Platforms" instance=ExtResource("2_p2v7r")]
+position = Vector2(288, 403)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -1092)
