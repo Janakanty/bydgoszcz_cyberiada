@@ -5,3 +5,6 @@ func _ready() -> void:
 
 func set_points(points: int):
 	$Points.text = str(points)
+	
+func set_message(message: String):
+	$GameOverMessage.text = message
