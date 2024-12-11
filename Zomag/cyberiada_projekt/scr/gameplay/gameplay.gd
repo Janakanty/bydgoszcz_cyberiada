@@ -23,7 +23,7 @@ func camera_state(state):
 	print("Pozycja playera:", $Player.global_position.y)
 	print("Pozycja kamery:", $Camera2D.global_position.y)
 	
-	if $Player.global_position - $Camera2D.global_position.y < 0:
+	if $Player.global_position.y - $Camera2D.global_position.y < 0:
 		state = "over"
 	else:
 		state = "under"
