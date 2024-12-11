@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://crtpal7dl7edn"]
+
+[ext_resource type="Texture2D" uid="uid://bfdnx7gp3xclv" path="res://assets/particles/muzzle_02.png" id="1_bt5ge"]
+
+[sub_resource type="Gradient" id="Gradient_g1iu7"]
+offsets = PackedFloat32Array(0, 0.122727, 0.245455, 0.368182, 0.486364, 0.627273, 0.759091, 0.868182, 1)
+colors = PackedColorArray(0, 0, 1, 1, 0.0333333, 0.180392, 1, 1, 0.0666667, 0.360784, 1, 1, 0.230485, 0.47266, 0.780244, 1, 0.388235, 0.580392, 0.568627, 1, 0.187647, 0.580392, 0.791503, 1, 0, 0.580392, 1, 1, 0.45283, 0.770403, 1, 1, 1, 1, 1, 1)
+
+[node name="Droplets" type="CPUParticles2D"]
+amount = 5
+lifetime = 2.0
+texture = ExtResource("1_bt5ge")
+color_initial_ramp = SubResource("Gradient_g1iu7")

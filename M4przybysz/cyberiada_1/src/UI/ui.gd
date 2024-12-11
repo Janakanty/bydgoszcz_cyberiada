@@ -6,3 +6,6 @@ func _ready():
 
 func set_points(points: int):
 	$Points.text = str(points)
+
+func game_over():
+	$GameOver.visible = true
