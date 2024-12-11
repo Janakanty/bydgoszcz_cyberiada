@@ -159,3 +159,4 @@ libraries = {
 
 [node name="jump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_hdhxe")
+bus = &"sfx"
