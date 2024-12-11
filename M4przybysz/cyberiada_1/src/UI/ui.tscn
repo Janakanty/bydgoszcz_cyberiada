@@ -17,6 +17,7 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.151042
 anchor_bottom = 0.0679012
+theme_override_colors/font_color = Color(1, 0.286275, 0, 1)
 theme_override_fonts/font = ExtResource("2_07ykf")
 theme_override_font_sizes/font_size = 30
 text = "12345"

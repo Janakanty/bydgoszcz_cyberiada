@@ -2,7 +2,8 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -800.0
+var JUMP_VELOCITY = -1000.0
+var speed_multiplier = 1
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var jump: AudioStreamPlayer = $Jump
@@ -28,9 +29,27 @@ func movement():
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
+	
+	if is_on_floor() && global_position.y > 0:
+		speed_multiplier = 1.5 + -global_position.y / 2160
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		speed_multiplier = 1 + -global_position.y / 2160
+	
+	if direction:
+		velocity.x = direction * SPEED * speed_multiplier
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED * speed_multiplier)
 
 	move_and_slide()
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("wall"):
+		JUMP_VELOCITY = -2000
+		velocity = Vector2(0, -750)
+		$Fire.visible = true
+		$Timer.stop()
+		$Timer.start()
+
+func _on_timer_timeout() -> void:
+	JUMP_VELOCITY = -1000
+	$Fire.visible = false

@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://bjgtg6iip2nl"]
+[gd_scene load_steps=18 format=3 uid="uid://bjgtg6iip2nl"]
 
 [ext_resource type="Texture2D" uid="uid://dwmi1vwvdvonj" path="res://assets/graphics/player/character_male_adventurer_sheet.png" id="1_3opdh"]
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_7b0cq"]
 [ext_resource type="PackedScene" uid="uid://dgw5rbbkgbekj" path="res://src/particles/stars.tscn" id="3_u0r17"]
-[ext_resource type="AudioStream" uid="uid://hk8p3ox8vkco" path="res://assets/sfx/jump.wav" id="4_euodl"]
+[ext_resource type="AudioStream" uid="uid://hk8p3ox8vkco" path="res://assets/SFX/jump.wav" id="4_euodl"]
+[ext_resource type="PackedScene" uid="uid://c16aiu2epwlh7" path="res://src/particles/fire.tscn" id="5_08sxu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wspmg"]
 atlas = ExtResource("1_3opdh")
@@ -96,6 +97,10 @@ _data = {
 "jump": SubResource("Animation_xauuf")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_myxo0"]
+radius = 36.0
+height = 128.0
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_7b0cq")
 
@@ -117,3 +122,18 @@ libraries = {
 [node name="Jump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_euodl")
 bus = &"SFX"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 11)
+shape = SubResource("CapsuleShape2D_myxo0")
+
+[node name="Timer" type="Timer" parent="." groups=["player"]]
+wait_time = 2.0
+
+[node name="Fire" parent="." instance=ExtResource("5_08sxu")]
+visible = false
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

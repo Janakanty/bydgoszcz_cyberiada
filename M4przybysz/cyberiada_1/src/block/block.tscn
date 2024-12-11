@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cw0txdxqmj5ee"]
+
+[ext_resource type="PackedScene" uid="uid://jvde3ui7itu2" path="res://src/wall/wall.tscn" id="1_wae63"]
+[ext_resource type="Script" path="res://src/block/block.gd" id="1_xhul4"]
+[ext_resource type="PackedScene" uid="uid://dnpdqkp48pfqe" path="res://src/level/platform.tscn" id="2_s2ix7"]
+
+[node name="Block" type="Node2D"]
+script = ExtResource("1_xhul4")
+
+[node name="Wall" parent="." instance=ExtResource("1_wae63")]
+
+[node name="Wall1" parent="." instance=ExtResource("1_wae63")]
+position = Vector2(1770, 0)
+
+[node name="Platform" parent="." instance=ExtResource("2_s2ix7")]
+position = Vector2(286, 891)
+
+[node name="Platform1" parent="." instance=ExtResource("2_s2ix7")]
+position = Vector2(1015, 637)
+
+[node name="Platform2" parent="." instance=ExtResource("2_s2ix7")]
+position = Vector2(252, 386)
+
+[node name="Platform3" parent="." instance=ExtResource("2_s2ix7")]
+position = Vector2(1026, 99)
