@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwr4bgfa82yx2"]
+
+[ext_resource type="Script" path="res://src/UI/ui.gd" id="1_hyjrw"]
+[ext_resource type="FontFile" uid="uid://but3ektdy176f" path="res://assets/fonts/PressStart2P-Regular.ttf" id="2_6amyc"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hyjrw")
+
+[node name="Points" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00173611
+anchor_right = 0.560764
+anchor_bottom = 0.180556
+theme_override_colors/font_color = Color(0.85098, 0.588235, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.831373, 0, 1)
+theme_override_colors/font_outline_color = Color(0.854902, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_6amyc")
+theme_override_font_sizes/font_size = 26
+text = "1231
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

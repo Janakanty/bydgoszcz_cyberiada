@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://detsdis3wa5na"]
+
+[ext_resource type="Script" path="res://src/gameplay/gameplay.gd" id="1_bajwu"]
+[ext_resource type="PackedScene" uid="uid://g1l3weelicqk" path="res://src/player/player.tscn" id="1_fud0u"]
+[ext_resource type="PackedScene" uid="uid://d4jxayrru23um" path="res://src/levels/level.tscn" id="2_dr4yn"]
+[ext_resource type="PackedScene" uid="uid://kgem2lud15v3" path="res://src/CAMERA/camera_2d.tscn" id="3_bua02"]
+[ext_resource type="PackedScene" uid="uid://cwr4bgfa82yx2" path="res://src/UI/ui.tscn" id="4_4ve3m"]
+[ext_resource type="PackedScene" uid="uid://gvg57qjxtsun" path="res://src/Bonus/bonus.tscn" id="6_at6d7"]
+
+[node name="Gameplay" type="Node2D"]
+script = ExtResource("1_bajwu")
+
+[node name="Camera2D" parent="." instance=ExtResource("3_bua02")]
+position = Vector2(580, 590)
+
+[node name="Player" parent="." instance=ExtResource("1_fud0u")]
+position = Vector2(555, 404)
+
+[node name="Level" parent="." instance=ExtResource("2_dr4yn")]
+position = Vector2(2, 85)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="UI" instance=ExtResource("4_4ve3m")]
+offset_left = -26.0
+offset_top = 80.0
+offset_right = -26.0
+offset_bottom = 80.0
+
+[node name="Bonus" parent="." instance=ExtResource("6_at6d7")]
+position = Vector2(795, 228)

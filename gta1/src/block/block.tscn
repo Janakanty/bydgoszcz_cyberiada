@@ -1,0 +1,111 @@
+[gd_scene load_steps=3 format=3 uid="uid://b35e4lobtjyqh"]
+
+[ext_resource type="PackedScene" uid="uid://barafgjlciyjp" path="res://src/walls/wals.tscn" id="1_pcv6g"]
+[ext_resource type="PackedScene" uid="uid://bt1d042688q62" path="res://src/levels/platforms/platform.tscn" id="2_i4vya"]
+
+[node name="Block" type="Node2D"]
+
+[node name="Walls" parent="." instance=ExtResource("1_pcv6g")]
+position = Vector2(13, 7)
+
+[node name="Walls3" parent="." instance=ExtResource("1_pcv6g")]
+position = Vector2(11, -621)
+
+[node name="Walls5" parent="." instance=ExtResource("1_pcv6g")]
+position = Vector2(9, -1270)
+
+[node name="Walls7" parent="." instance=ExtResource("1_pcv6g")]
+position = Vector2(13, -1908)
+
+[node name="Walls9" parent="." instance=ExtResource("1_pcv6g")]
+position = Vector2(13, -2541)
+
+[node name="Walls11" parent="." instance=ExtResource("1_pcv6g")]
+position = Vector2(8, -3201)
+
+[node name="Walls12" parent="." instance=ExtResource("1_pcv6g")]
+position = Vector2(1071, -3196)
+
+[node name="Walls4" parent="." instance=ExtResource("1_pcv6g")]
+position = Vector2(1074, -633)
+
+[node name="Walls6" parent="." instance=ExtResource("1_pcv6g")]
+position = Vector2(1072, -1280)
+
+[node name="Walls8" parent="." instance=ExtResource("1_pcv6g")]
+position = Vector2(1072, -1922)
+
+[node name="Walls10" parent="." instance=ExtResource("1_pcv6g")]
+position = Vector2(1068, -2564)
+
+[node name="Walls2" parent="." instance=ExtResource("1_pcv6g")]
+position = Vector2(1074, 11)
+
+[node name="Platform" parent="." instance=ExtResource("2_i4vya")]
+position = Vector2(614, 499)
+
+[node name="Platform6" parent="." instance=ExtResource("2_i4vya")]
+position = Vector2(265, 304)
+
+[node name="Platform2" parent="." instance=ExtResource("2_i4vya")]
+position = Vector2(877, 357)
+
+[node name="Platform3" parent="." instance=ExtResource("2_i4vya")]
+position = Vector2(246, -303)
+
+[node name="Platform5" parent="." instance=ExtResource("2_i4vya")]
+position = Vector2(498, -431)
+
+[node name="Platform9" parent="." instance=ExtResource("2_i4vya")]
+position = Vector2(888, -552)
+
+[node name="Platform10" parent="." instance=ExtResource("2_i4vya")]
+position = Vector2(657, -688)
+
+[node name="Platform11" parent="." instance=ExtResource("2_i4vya")]
+position = Vector2(255, -797)
+
+[node name="Platform12" parent="." instance=ExtResource("2_i4vya")]
+position = Vector2(509, -940)
+
+[node name="Platform13" parent="." instance=ExtResource("2_i4vya")]
+position = Vector2(873, -1054)
+
+[node name="Platform14" parent="." instance=ExtResource("2_i4vya")]
+position = Vector2(566, -1182)
+
+[node name="Platform15" parent="." instance=ExtResource("2_i4vya")]
+position = Vector2(258, -1380)
+
+[node name="Platform16" parent="." instance=ExtResource("2_i4vya")]
+position = Vector2(527, -1600)
+
+[node name="Platform17" parent="." instance=ExtResource("2_i4vya")]
+position = Vector2(873, -1789)
+
+[node name="Platform18" parent="." instance=ExtResource("2_i4vya")]
+position = Vector2(631, -2005)
+
+[node name="Platform19" parent="." instance=ExtResource("2_i4vya")]
+position = Vector2(258, -2203)
+
+[node name="Platform20" parent="." instance=ExtResource("2_i4vya")]
+position = Vector2(509, -2419)
+
+[node name="Platform21" parent="." instance=ExtResource("2_i4vya")]
+position = Vector2(864, -2630)
+
+[node name="Platform22" parent="." instance=ExtResource("2_i4vya")]
+position = Vector2(607, -2862)
+
+[node name="Platform23" parent="." instance=ExtResource("2_i4vya")]
+position = Vector2(259, -3028)
+
+[node name="Platform4" parent="." instance=ExtResource("2_i4vya")]
+position = Vector2(629, 163)
+
+[node name="Platform7" parent="." instance=ExtResource("2_i4vya")]
+position = Vector2(263, -1)
+
+[node name="Platform8" parent="." instance=ExtResource("2_i4vya")]
+position = Vector2(578, -148)
