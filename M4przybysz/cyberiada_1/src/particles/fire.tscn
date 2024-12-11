@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://c16aiu2epwlh7"]
+
+[ext_resource type="Texture2D" uid="uid://dd50o53jc4hgp" path="res://assets/particles/fire_02.png" id="1_ec02d"]
+
+[sub_resource type="Gradient" id="Gradient_ulh5i"]
+offsets = PackedFloat32Array(0, 0.3, 0.663636, 1)
+colors = PackedColorArray(1, 0.133333, 0, 1, 1, 0, 0.180392, 1, 1, 0.65098, 0.00392157, 1, 1, 0.301961, 0, 1)
+
+[node name="Fire" type="CPUParticles2D"]
+amount = 10
+randomness = 0.5
+texture = ExtResource("1_ec02d")
+emission_shape = 3
+emission_rect_extents = Vector2(50, 1)
+spread = 100.0
+gravity = Vector2(0, -100)
+angular_velocity_min = -10.0
+angular_velocity_max = 10.0
+linear_accel_min = -20.0
+linear_accel_max = 20.0
+radial_accel_min = -20.0
+radial_accel_max = 20.0
+scale_amount_min = 0.3
+scale_amount_max = 0.5
+color_initial_ramp = SubResource("Gradient_ulh5i")

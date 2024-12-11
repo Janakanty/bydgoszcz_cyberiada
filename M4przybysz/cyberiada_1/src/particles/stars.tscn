@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgw5rbbkgbekj"]
+
+[ext_resource type="Texture2D" uid="uid://dl4nsn50e2gt7" path="res://assets/particles/star_07.png" id="1_yyctr"]
+
+[sub_resource type="Gradient" id="Gradient_1evpy"]
+offsets = PackedFloat32Array(0, 0.163636, 0.35, 0.509091, 0.695455, 0.85, 1)
+colors = PackedColorArray(1, 0.513726, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 9.62615e-07, 0.676013, 0.839996, 1, 0.408178, 0.877223, 0, 1, 0, 0.843137, 0.454902, 1, 1, 1, 1, 1)
+
+[node name="Stars" type="CPUParticles2D"]
+amount = 30
+lifetime = 1.5
+randomness = 0.5
+texture = ExtResource("1_yyctr")
+spread = 180.0
+gravity = Vector2(0, 300)
+initial_velocity_min = 75.0
+initial_velocity_max = 125.0
+angular_velocity_min = -50.0
+angular_velocity_max = 50.0
+scale_amount_min = 0.1
+scale_amount_max = 0.2
+color_initial_ramp = SubResource("Gradient_1evpy")

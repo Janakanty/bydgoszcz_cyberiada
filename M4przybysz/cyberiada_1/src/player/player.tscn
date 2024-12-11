@@ -1,0 +1,139 @@
+[gd_scene load_steps=18 format=3 uid="uid://bjgtg6iip2nl"]
+
+[ext_resource type="Texture2D" uid="uid://dwmi1vwvdvonj" path="res://assets/graphics/player/character_male_adventurer_sheet.png" id="1_3opdh"]
+[ext_resource type="Script" path="res://src/player/player.gd" id="1_7b0cq"]
+[ext_resource type="PackedScene" uid="uid://dgw5rbbkgbekj" path="res://src/particles/stars.tscn" id="3_u0r17"]
+[ext_resource type="AudioStream" uid="uid://hk8p3ox8vkco" path="res://assets/SFX/jump.wav" id="4_euodl"]
+[ext_resource type="PackedScene" uid="uid://c16aiu2epwlh7" path="res://src/particles/fire.tscn" id="5_08sxu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wspmg"]
+atlas = ExtResource("1_3opdh")
+region = Rect2(0, 0, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvhuu"]
+atlas = ExtResource("1_3opdh")
+region = Rect2(96, 0, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ql3oo"]
+atlas = ExtResource("1_3opdh")
+region = Rect2(384, 0, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8stk"]
+atlas = ExtResource("1_3opdh")
+region = Rect2(480, 256, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmhit"]
+atlas = ExtResource("1_3opdh")
+region = Rect2(384, 384, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agyto"]
+atlas = ExtResource("1_3opdh")
+region = Rect2(768, 512, 96, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rm4cg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wspmg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvhuu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ql3oo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8stk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmhit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agyto")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o7kya"]
+radius = 20.0
+height = 72.0
+
+[sub_resource type="Animation" id="Animation_x5d4t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_xauuf"]
+resource_name = "jump"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1ju2x"]
+_data = {
+"RESET": SubResource("Animation_x5d4t"),
+"jump": SubResource("Animation_xauuf")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_myxo0"]
+radius = 36.0
+height = 128.0
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_7b0cq")
+
+[node name="Stars" parent="." instance=ExtResource("3_u0r17")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rm4cg")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 28)
+shape = SubResource("CapsuleShape2D_o7kya")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1ju2x")
+}
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_euodl")
+bus = &"SFX"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 11)
+shape = SubResource("CapsuleShape2D_myxo0")
+
+[node name="Timer" type="Timer" parent="." groups=["player"]]
+wait_time = 2.0
+
+[node name="Fire" parent="." instance=ExtResource("5_08sxu")]
+visible = false
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

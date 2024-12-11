@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://k0wwcf4ud3tj"]
+
+[ext_resource type="Script" path="res://src/UI/ui.gd" id="1_hfygo"]
+[ext_resource type="FontFile" uid="uid://dqtmdcyvtxs5b" path="res://assets/fonts/Pizelify_Sans/static/PixelifySans-Regular.ttf" id="2_07ykf"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hfygo")
+
+[node name="Points" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.151042
+anchor_bottom = 0.0679012
+theme_override_colors/font_color = Color(1, 0.286275, 0, 1)
+theme_override_fonts/font = ExtResource("2_07ykf")
+theme_override_font_sizes/font_size = 30
+text = "12345"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="GameOver" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 848.0
+offset_top = 473.0
+offset_right = 1065.0
+offset_bottom = 544.0
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
