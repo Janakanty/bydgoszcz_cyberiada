@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b6qy75bv6froa"]
+[gd_scene load_steps=25 format=3 uid="uid://b6qy75bv6froa"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_3ugxl"]
 [ext_resource type="PackedScene" uid="uid://h5hp4juhtau1" path="res://assets/graphics/particles/stars.tscn" id="2_3ungs"]
@@ -152,6 +152,10 @@ _data = {
 "jump": SubResource("Animation_utrg6")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mahh5"]
+radius = 46.0
+height = 224.0
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 position = Vector2(2, 0)
 script = ExtResource("1_3ugxl")
@@ -177,3 +181,12 @@ libraries = {
 [node name="jump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_bwgfm")
 bus = &"SFX"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 37)
+shape = SubResource("CapsuleShape2D_mahh5")
+debug_color = Color(1.8771e-06, 0.64939, 0.145684, 0.42)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

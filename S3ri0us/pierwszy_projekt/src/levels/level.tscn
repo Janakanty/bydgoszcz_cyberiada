@@ -1,23 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dximm3hww83ho"]
+[gd_scene load_steps=3 format=3 uid="uid://dximm3hww83ho"]
 
-[ext_resource type="PackedScene" uid="uid://csvskn6gqc8on" path="res://src/levels/platforms/platform.tscn" id="1_6kqgw"]
+[ext_resource type="PackedScene" uid="uid://b06la3wxds2cd" path="res://src/levels/Blocks/block.tscn" id="1_gadac"]
+[ext_resource type="Script" path="res://src/levels/level.gd" id="1_qhfnm"]
 
 [node name="Level" type="Node2D"]
 position = Vector2(4, 161)
+script = ExtResource("1_qhfnm")
 
-[node name="Platforms" type="Node2D" parent="."]
-
-[node name="StaticBody2D" parent="Platforms" instance=ExtResource("1_6kqgw")]
-position = Vector2(386, -78)
-
-[node name="StaticBody2D2" parent="Platforms" instance=ExtResource("1_6kqgw")]
-position = Vector2(2, 85)
-
-[node name="StaticBody2D3" parent="Platforms" instance=ExtResource("1_6kqgw")]
-position = Vector2(684, -288)
-
-[node name="StaticBody2D4" parent="Platforms" instance=ExtResource("1_6kqgw")]
-position = Vector2(1, -456)
-
-[node name="StaticBody2D5" parent="Platforms" instance=ExtResource("1_6kqgw")]
-position = Vector2(690, -673)
+[node name="Block" parent="." instance=ExtResource("1_gadac")]
+position = Vector2(0, -1072)

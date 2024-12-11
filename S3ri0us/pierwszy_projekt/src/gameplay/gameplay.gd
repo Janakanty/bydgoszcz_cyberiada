@@ -14,7 +14,6 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	points_update()
-
 	camera_state()
 
 func points_update():
@@ -23,8 +22,9 @@ func points_update():
 		score = (-player_position)
 	$UI/UI.set_points(score)
 
+
 func game_over():
-	print("hehehue")
+	#print("hehehue")
 	$UI/UI.game_over()
 	game_over_signal.emit()
 	#$Player.queue_free()
