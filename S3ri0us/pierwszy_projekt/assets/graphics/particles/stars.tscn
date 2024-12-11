@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://h5hp4juhtau1"]
+
+[ext_resource type="Texture2D" uid="uid://b6i7g0vfknup4" path="res://assets/graphics/particles/symbol_02.png" id="1_ywowe"]
+
+[sub_resource type="Gradient" id="Gradient_3kede"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.124711, 0.549654, 1)
+colors = PackedColorArray(0, 0.580392, 0, 1, 0.689953, 3.80233e-06, 0.434121, 1, 0.633959, 0.310332, 0, 1, 1, 1, 1, 1)
+
+[node name="CPUParticle" type="CPUParticles2D"]
+amount = 30
+lifetime = 2.0
+lifetime_randomness = 0.2
+texture = ExtResource("1_ywowe")
+direction = Vector2(0, 0)
+spread = 30.0
+gravity = Vector2(0, 100)
+scale_amount_min = 0.2
+scale_amount_max = 0.5
+color_initial_ramp = SubResource("Gradient_3kede")
