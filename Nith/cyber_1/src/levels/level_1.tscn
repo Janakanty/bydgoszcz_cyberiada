@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://vwhj2pq24m7n"]
+
+[ext_resource type="PackedScene" uid="uid://ddt8syamet6jn" path="res://src/levels/platforms/platform1.tscn" id="1_s2div"]
+
+[node name="level1" type="Node2D"]
+
+[node name="platforms" type="Node2D" parent="."]
+
+[node name="StaticBody2D" parent="platforms" instance=ExtResource("1_s2div")]
+position = Vector2(1, 132)
+
+[node name="StaticBody2D2" parent="platforms" instance=ExtResource("1_s2div")]
+position = Vector2(453, 266)
+
+[node name="StaticBody2D3" parent="platforms" instance=ExtResource("1_s2div")]
+position = Vector2(233, 8)
+
+[node name="StaticBody2D4" parent="platforms" instance=ExtResource("1_s2div")]
+position = Vector2(213, 454)
+
+[node name="StaticBody2D5" parent="platforms" instance=ExtResource("1_s2div")]
+position = Vector2(8, 591)
