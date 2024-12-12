@@ -10,6 +10,9 @@ func _ready() -> void:
 	random_bonus()
 	random_bonus()
 	random_bonus()
+	
+	$Level.connect("cam", actualization)
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -45,3 +48,5 @@ func random_bonus():
 	b.global_position.y = randi_range(-1200,0)
 	add_child(b)
 	
+func actualization():
+	$Camera2D.global_position.x = 200
