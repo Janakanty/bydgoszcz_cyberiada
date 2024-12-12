@@ -44,12 +44,6 @@ position = Vector2(1071, -3196)
 [node name="Walls13" parent="." instance=ExtResource("1_pcv6g")]
 position = Vector2(1066, -3836)
 
-[node name="Walls15" parent="." instance=ExtResource("1_pcv6g")]
-position = Vector2(4034, -6185)
-
-[node name="Walls31" parent="." instance=ExtResource("1_pcv6g")]
-position = Vector2(4034, -6820)
-
 [node name="Walls16" parent="." instance=ExtResource("1_pcv6g")]
 position = Vector2(1409, -3806)
 
@@ -223,18 +217,6 @@ position = Vector2(1649, -6193)
 
 [node name="Platform45" parent="." instance=ExtResource("2_i4vya")]
 position = Vector2(2072, -6359)
-
-[node name="Platform46" parent="." instance=ExtResource("2_i4vya")]
-position = Vector2(2365, -6551)
-
-[node name="Platform47" parent="." instance=ExtResource("2_i4vya")]
-position = Vector2(2713, -6753)
-
-[node name="Platform48" parent="." instance=ExtResource("2_i4vya")]
-position = Vector2(3116, -6929)
-
-[node name="Platform49" parent="." instance=ExtResource("2_i4vya")]
-position = Vector2(3474, -7066)
 
 [node name="Platform4" parent="." instance=ExtResource("2_i4vya")]
 position = Vector2(629, 163)

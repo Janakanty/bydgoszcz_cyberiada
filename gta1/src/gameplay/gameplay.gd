@@ -49,4 +49,5 @@ func random_bonus():
 	add_child(b)
 	
 func actualization():
-	$Camera2D.global_position.x = 200
+	var tween = create_tween()
+	tween.tween_property($Camera2D, "global_position:x", 1500,4)

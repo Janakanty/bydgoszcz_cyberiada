@@ -14,7 +14,7 @@ script = ExtResource("1_xfy4i")
 [node name="Block2" parent="." instance=ExtResource("1_xux2u")]
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(221, -4076)
+position = Vector2(-81, -4172)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(729.5, 99)
