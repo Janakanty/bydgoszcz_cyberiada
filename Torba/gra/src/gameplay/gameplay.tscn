@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddayqpn68wmue"]
+
+[ext_resource type="Script" path="res://src/gameplay/gameplay.gd" id="1_2usbl"]
+[ext_resource type="PackedScene" uid="uid://nxo1qbkfn2ks" path="res://src/player/player.tscn" id="1_si445"]
+[ext_resource type="PackedScene" uid="uid://q6p1o6uq8hy2" path="res://src/UI/ui.tscn" id="2_7dpx7"]
+[ext_resource type="PackedScene" uid="uid://b81cch3to7dk3" path="res://src/level/level.tscn" id="2_ijkln"]
+[ext_resource type="PackedScene" uid="uid://eveih3w1a73i" path="res://src/camera/camera.tscn" id="4_k0t14"]
+
+[node name="Gameplay" type="Node2D"]
+script = ExtResource("1_2usbl")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="UI" instance=ExtResource("2_7dpx7")]
+
+[node name="Player" parent="." instance=ExtResource("1_si445")]
+position = Vector2(631, 685)
+
+[node name="Camera2D" parent="." instance=ExtResource("4_k0t14")]
+position = Vector2(963, 534)
+
+[node name="Level" parent="." instance=ExtResource("2_ijkln")]

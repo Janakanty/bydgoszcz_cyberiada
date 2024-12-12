@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://ra15tmfdmwmf"]
+
+[ext_resource type="Texture2D" uid="uid://b6i7g0vfknup4" path="res://assets/particle/symbol_02.png" id="1_earok"]
+
+[sub_resource type="Gradient" id="Gradient_yyj08"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.246154, 0.712821, 1)
+colors = PackedColorArray(0.900133, 0.219425, 0.553386, 1, 1.34766e-06, 0.658263, 0.968896, 1, 0.531943, 0.957211, 0, 1, 1, 1, 0.27451, 1)
+
+[node name="Stars" type="CPUParticles2D"]
+position = Vector2(-58, 5)
+amount = 60
+preprocess = 142.47
+randomness = 0.11
+texture = ExtResource("1_earok")
+direction = Vector2(0, 0)
+spread = 29.59
+gravity = Vector2(0, -100)
+initial_velocity_max = 132.42
+angular_velocity_min = -10.0
+angular_velocity_max = 10.0
+linear_accel_max = 18.26
+radial_accel_min = -7.31
+tangential_accel_max = 11.87
+damping_max = 36.986
+angle_min = -20.0
+angle_max = 20.0
+scale_amount_min = 0.2
+scale_amount_max = 0.5
+color_initial_ramp = SubResource("Gradient_yyj08")
